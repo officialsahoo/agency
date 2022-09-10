@@ -7,9 +7,9 @@ let clientModel = require('../models/clients');
 
 
 //Default route
-router.get('/',(req,res)=>{
-    res.send("Welcome");
-});
+// router.get('/',(req,res)=>{
+//     res.send("Welcome");
+// });
 
 //For getting the token
 router.get('/token',(req,res)=>{
