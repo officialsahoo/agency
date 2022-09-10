@@ -21,7 +21,6 @@ const signup = async(req,res)=>{
     }catch(err){
         console.log(err);
         res.status(201).render('signup',{msg:'An error occoured!', type:'danger'});
-        // res.json({ message:"An error occoured!" })
     }
 }
 
@@ -47,7 +46,6 @@ const login = async (req,res)=>{
         }
     } catch(err){
         res.status(400).render('login',{msg:'No client found!', type:'danger'});
-        // res.json({message:'No client found!'})
     }
 }
 
