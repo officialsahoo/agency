@@ -20,8 +20,7 @@ router.post('/',AuthController.login);
 router.get('/logout',authenticate, (req,res)=>{
     try{
         res.clearCookie("jwt");
-        // res.redirect('/');
-        res.redirect('login',{msg:'You are logged out successfully', type:'success'});
+        res.render('login',{msg:'You are logged out successfully', type:'success'});
     }catch(err){
         res.status(200).send(err);
     }
