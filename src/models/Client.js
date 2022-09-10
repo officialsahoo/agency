@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const jwt = require('jsonwebtoken');
 
 const clientSchema = new mongoose.Schema({
     AgencyId:{
-        type:Number,
-        required:true
+        type:String
     },
     Name:{
         type:String,
@@ -21,14 +21,26 @@ const clientSchema = new mongoose.Schema({
         }
     },
     PhoneNumber:{
-        type:Number,
-        required:true
+        type:Number
     },
     TotalBill:{
-        type:Number,
+        type:Number
+    },
+    Password:{
+        type:String,
         required:true
     }
-})
+});
+
+clientSchema.methods.generateToken = async function(req,res){
+    try{
+        let ntoken = jwt.sign({_id:this._id},process.env.SECRET_KEY,{expiresIn:'2h'});
+        return ntoken;
+    } catch(err){
+        res.send(err);
+    }
+}
+
 
 const Client = new mongoose.model('Client',clientSchema);
 module.exports = Client;
