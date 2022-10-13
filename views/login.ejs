@@ -17,12 +17,12 @@
         }
     </style>
   </head>
-  <body>
+  <body style="background-color: black">
     <div class="container">
         
         <div class="vertical-align">
             <div class="login-form">
-                <div class="row">
+                <div class="row p-2"  style="background-color:white; border-radius: 2px;">
                     <% if (locals.msg) { %>
                         <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
                             <strong><%= msg %></strong>
@@ -37,12 +37,12 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" class="form-control" id="email"
-                                    name="Email" placeholder="name@example.com">
+                                    name="Email" placeholder="name@example.com" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="text" class="form-control" id="password" name="Password"
-                                    placeholder="name@example.com">
+                                    placeholder="name@example.com" required>
                             </div>
     
                             

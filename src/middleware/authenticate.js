@@ -7,7 +7,8 @@ const authenticate = async (req, res, next)=>{
         req.token = token;
         next();
     } catch(err) {
-        res.status(200).send(err);
+        // res.status(200).send(err);
+        next();
     }
 }
 

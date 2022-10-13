@@ -18,6 +18,9 @@ app.use(signupRoute);
 const homeRoute = require('./routes/home');
 app.use(homeRoute);
 
+const clientRoute = require('./routes/client');
+app.use(clientRoute);
+
 
 // const agentRoute = require('./routes/agency');
 // app.use(express.urlencoded({extended:false})); //Required for form data

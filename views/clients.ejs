@@ -7,9 +7,10 @@
   <title>Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
-<body style="background-color: #efeded;">
+<body style="background-color: #c8c8c8;">
   <div class="container">
 
     <ul class="nav justify-content-end">
@@ -45,7 +46,9 @@
               <th scope="row"><%= i+1 %></th>
               <td><%= List[i].Name %></td>
               <td><%= List[i].Email %></td>
-              <td> <a href="">Edit</a> <a href="">Delete</a></td>
+              <td>
+                <a href="client/<%= List[i]._id %>" style="color:rgb(11, 135, 11)" title="Edit"><i class="bi bi-pen-fill"></i></a> 
+                <a href="/delete" style="color:red" title="Delete"><i class="bi bi-person-x-fill"></i></a></td>
             </tr>
             <% } %>
           </tbody>
